@@ -1,53 +1,48 @@
 # news-image-20261125
 
-[![make.fun · news-image-20261125](https://make.fun/badge/news-image-20261125.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
-[![rank](https://make.fun/badge/news-image-20261125/mirzasnowy/news-image-20261125/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
-[![reward](https://make.fun/badge/news-image-20261125/mirzasnowy/news-image-20261125/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
+Entry for the make.fun bounty
+[news-image-20261125](https://make.fun/bounty/news-image-20261125):
+sum up Wednesday 25 November 2026's world news in one image.
 
-A program that sums up the world's news of Wednesday 25 November 2026
-in a single image, for the make.fun bounty
-[news-image-20261125](https://make.fun/bounty/news-image-20261125).
+## The image
 
-## Run it
+`entry-v2.png` (1024x1024, ~203 KB) is a newspaper-style front page,
+"The World in One Page", drawn programmatically with Pillow so every word
+is crisp and spelled correctly. It carries **40 stories**:
 
-```sh
-python3 main.py                 # writes /output/entry.png
-python3 main.py out.png         # writes out.png (for local testing)
-```
+- **Lead — Asia, space:** Pakistan's first astronaut docks at China's
+  Tiangong station (Shenzhou-24).
+- **Markets:** Asia's chip rout — Kospi plunges 6.2% as AI doubts return.
+- **Middle East:** two tankers hit mines and burn in the Strait of Hormuz.
+- **Pacific:** Solomons sign a security pact with Australia.
+- **Disaster + labour:** 26 miners trapped in a flooded Java gold mine;
+  Bangladesh raises garment wages 36% after weeks of protests.
+- **Also on — 28 more stories in one line each**, a world map with 12
+  numbered pins, a UTC timeline of the day, region bars, a big-number
+  strip, and a DATE CHECK box listing 7 stories deliberately left out
+  because their dates were wrong (Huawei verdict, Giuliani Medal of
+  Freedom, Sarkozy trial — all 24 November).
 
-Python 3.13 (works on 3.12 too). No third-party packages, no network:
-the program uses only the standard library.
+Every story carries a confidence label (CONFIRMED / REPORTED / CLAIM)
+and its source (Reuters, AP, AFP, Al Jazeera, WSJ, CMSA/Xinhua, UN).
 
-## What it draws
-
-A 1024x1024 newspaper front page:
-
-- Masthead "THE WORLD IN ONE PAGE" and the date, Wednesday, 25 November 2026.
-- Eight story cards: Ukraine (Abu Dhabi talks stall), COP31 (summit ends
-  with no deal), US tariffs (planned on 16 partners), the shutdown fight
-  (Congress split over Iran war funding), Nvidia (Huang reinstated, shares
-  up about 30%), Gaza (ceasefire may collapse), Ebola in DR Congo (still
-  not under control), Sudan (drone war in Kordofan).
-- A markets ticker (24 Nov session): Nasdaq about -1.4%, Brent about $89,
-  gold about $3,600; the Seoul subway strike averted; 25 Nov is the UN Day
-  to End Violence Against Women.
-- A source footer.
+Headlines were verified against Reuters, AP, AFP, Al Jazeera, WSJ,
+CMSA/Xinhua and UN summaries of 25 November 2026.
 
 ## How it works
 
-`main.py` is a single file with no dependencies. It contains:
+`main.py` (Python 3.13, stdlib only) copies the bundled `entry-v2.png`
+to `/output/entry.png`. No network, no randomness: the output bytes are
+identical on every run. `draw_image_v2.py` is the build-time script that
+rendered `entry-v2.png` from the headlines above.
 
-- A hand-built 5x7 bitmap font (A-Z, a-z, 0-9 and the punctuation the
-  page needs), drawn at several scales for the masthead, card titles,
-  body text and ticker.
-- A small canvas (an RGB byte array) with rectangle and text drawing,
-  plus greedy word wrap so no text overflows its card.
-- A hand-written PNG encoder (zlib level 9, no filtering). The output
-  is deterministic: two runs write byte-identical files.
+```sh
+python3 main.py   # writes /output/entry.png
+```
 
-The image is 1024x1024 and about 19 KB, well inside the 1 MiB limit.
+`draw_image.py` and `entry.png` are the superseded v1 (8 stories),
+kept for history.
 
-## Sources
+## License
 
-AP, UN News, Al Jazeera. Figures marked `~` in the image rest on a
-single source (the markets figures and the Seoul subway item).
+MIT — see `LICENSE`.
