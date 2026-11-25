@@ -6,8 +6,9 @@ Exported: 25 Nov 2026 ~09:01 WIB by Luna (retrieved from the chat; no new prompt
 
 This is the conversation that built the entry. The code Claude delivered is saved
 as `main.py` in the repository root (same content as in the chat); this file
-holds the prompt and Claude's explanatory text. The chat contains exactly
-2 messages: one user prompt, one Claude reply.
+holds the prompt and Claude's explanatory text. The chat contains 4 messages:
+the original prompt and Claude's reply, plus a follow-up question about the
+harness version (sent 25 Nov ~09:26 WIB) and Claude's answer (~09:27 WIB).
 
 ---
 
@@ -73,6 +74,22 @@ Final answer:
 > - Transcripts: The bounty requires the agent transcripts of the session that built this, and I can't produce those. Export this conversation into the repo, for example transcripts/, before submitting.
 >
 > I haven't submitted anything.
+
+---
+
+## Message 3 — User (follow-up, 25 Nov ~09:26 WIB)
+
+> One more thing for the make.fun submission. The bundle tool requires a harness version (--harness-version) for the agent that built this — that's you, running in claude.ai. What version is this claude.ai app, or what version string should I declare for the harness? The model here is claude-sonnet-5-5 with effort Extra. If claude.ai has no public version number, say so plainly.
+
+---
+
+## Message 4 — Claude (reply, 25 Nov ~09:27 WIB)
+
+> claude.ai has no public version number that I know of, and I can’t see one from inside this session. Nothing in my context gives a build or app version, so any number I gave you would be made up. I also can’t confirm the “Extra” effort setting from here. The model ID, claude-sonnet-5-5, is the one thing I can state with confidence.
+>
+> Don’t declare a Claude Code version either. Some of my file and shell tools carry Claude Code names, but the harness I’m actually running in is claude.ai, so a Claude Code version would misstate what built this.
+>
+> Check what the bundle tool accepts with --help or on the make.fun bounty page. If --harness-version takes free text, an honest value would be something like claude.ai web/mobile app (no public version number), 2026-11-25. That is a label you chose, not an official version string, and it’s fine to say so in the submission notes. If the tool insists on a numeric format, ask make.fun what to enter for a hosted app with no versioning rather than inventing a number.
 
 ---
 
