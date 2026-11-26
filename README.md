@@ -10,7 +10,7 @@ sum up Wednesday 25 November 2026's world news in one image.
 
 ## The image
 
-`entry-v6.png` (1024x1024, ~211 KB) is "The World Wire", a newspaper-style
+`entry-v7.png` (1024x1024, ~213 KB) is "The World Wire", a newspaper-style
 front page drawn programmatically with Pillow so every word is crisp and
 spelled correctly. It carries **35 stories**: 1 lead, 12 main cards, and
 22 more in the ALSO ON list.
@@ -42,19 +42,20 @@ CMSA/Xinhua and UN summaries of 25 November 2026.
 
 ## How it works
 
-`main.py` (Python 3.13, stdlib only) copies the bundled `entry-v6.png`
+`main.py` (Python 3.13, stdlib only) copies the bundled `entry-v7.png`
 to `/output/entry.png`. No network, no randomness: the output bytes are
-identical on every run. `draw_image_v6.py` is the build-time script that
-rendered `entry-v6.png` from the headlines above.
+identical on every run. `draw_image_v7.py` is the build-time script that
+rendered `entry-v7.png` from the headlines above.
 
 ```sh
 python3 main.py   # writes /output/entry.png
 ```
 
-`draw_image_v5.py` / `entry-v5.png`, `draw_image_v4.py` /
-`entry-v4.png`, `draw_image_v3.py` / `entry-v3.png`,
-`draw_image_v2.py` / `entry-v2.png`, and `draw_image.py` /
-`entry.png` are superseded versions, kept for history.
+`draw_image_v6.py` / `entry-v6.png`, `draw_image_v5.py` /
+`entry-v5.png`, `draw_image_v4.py` / `entry-v4.png`,
+`draw_image_v3.py` / `entry-v3.png`, `draw_image_v2.py` /
+`entry-v2.png`, and `draw_image.py` / `entry.png` are superseded
+versions, kept for history.
 
 ## License
 
