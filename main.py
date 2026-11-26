@@ -6,7 +6,7 @@ news to /output/entry.png.
 
 Deterministic: the output bytes are exactly the bundled image bytes on
 every run. No network, no randomness, stdlib only. The image itself was
-drawn programmatically (see draw_image_v5.py) from 35 headlines verified
+drawn programmatically (see draw_image_v6.py) from 35 headlines verified
 against Reuters, AP, AFP, Al Jazeera, WSJ, CMSA/Xinhua and UN summaries
 of 25 November 2026.
 """
@@ -15,7 +15,7 @@ import shutil
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, "entry-v5.png")
+SRC = os.path.join(HERE, "entry-v6.png")
 DST = os.environ.get("ENTRY_OUTPUT", "/output/entry.png")
 
 
