@@ -10,10 +10,10 @@ sum up Wednesday 25 November 2026's world news in one image.
 
 ## The image
 
-`entry-v7.png` (1024x1024, ~213 KB) is "The World Wire", a newspaper-style
+`entry-v8.png` (1024x1024, ~219 KB) is "The World Wire", a newspaper-style
 front page drawn programmatically with Pillow so every word is crisp and
-spelled correctly. It carries **35 stories**: 1 lead, 12 main cards, and
-22 more in the ALSO ON list.
+spelled correctly. It carries **39 stories**: 1 lead, 12 main cards, and
+26 more in the ALSO ON list.
 
 - **Lead — Asia, space:** Pakistan's first astronaut docks at China's
   Tiangong station (Shenzhou-24, the 18th crewed Shenzhou flight).
@@ -42,20 +42,20 @@ CMSA/Xinhua and UN summaries of 25 November 2026.
 
 ## How it works
 
-`main.py` (Python 3.13, stdlib only) copies the bundled `entry-v7.png`
+`main.py` (Python 3.13, stdlib only) copies the bundled `entry-v8.png`
 to `/output/entry.png`. No network, no randomness: the output bytes are
-identical on every run. `draw_image_v7.py` is the build-time script that
-rendered `entry-v7.png` from the headlines above.
+identical on every run. `draw_image_v8.py` is the build-time script that
+rendered `entry-v8.png` from the headlines above.
 
 ```sh
 python3 main.py   # writes /output/entry.png
 ```
 
-`draw_image_v6.py` / `entry-v6.png`, `draw_image_v5.py` /
-`entry-v5.png`, `draw_image_v4.py` / `entry-v4.png`,
-`draw_image_v3.py` / `entry-v3.png`, `draw_image_v2.py` /
-`entry-v2.png`, and `draw_image.py` / `entry.png` are superseded
-versions, kept for history.
+`draw_image_v7.py` / `entry-v7.png`, `draw_image_v6.py` /
+`entry-v6.png`, `draw_image_v5.py` / `entry-v5.png`,
+`draw_image_v4.py` / `entry-v4.png`, `draw_image_v3.py` /
+`entry-v3.png`, `draw_image_v2.py` / `entry-v2.png`, and `draw_image.py` /
+`entry.png` are superseded versions, kept for history.
 
 ## License
 
